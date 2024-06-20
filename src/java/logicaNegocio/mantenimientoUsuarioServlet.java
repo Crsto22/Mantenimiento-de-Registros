@@ -6,35 +6,35 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
-public class sesionVerificaServlet extends HttpServlet {
+import jakarta.servlet.annotation.WebServlet;
+import logicaNegocio.mantenimientoUsuarioMetodos;
+import logicaNegocio.mantenimientoUsuarioClase;
 
-    protected void processRequest(HttpServletRequest objetoPeticion1, HttpServletResponse objetoRespuesta1)
+public class mantenimientoUsuarioServlet extends HttpServlet {
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        objetoRespuesta1.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = objetoRespuesta1.getWriter();
-        try{
-            String varUsuario = objetoPeticion1.getParameter("txtUsuario");
-            String varPassword = objetoPeticion1.getParameter("txtPassword");
-            String[] datos = sesionClase.getFila("select * from mibase1.tbusuario2 where usuario='"+varUsuario+"' and password='"+varPassword+"'");
-            if (datos == null) {
-                out.println("<html>");
-                out.println("Error, el usuario");
-                out.println("<b>"+varUsuario+"</b>");
-                out.println(", no cumple con los datos solicitados, Para reingresar de clic <a href='index.jsp'>Aqui</a>");
-                out.println("</html>");
-            }else{
-                String varCodigo = datos[0];
-                String varNombres = datos[3];
-                String varApellidos = datos[4];
-                HttpSession session = objetoPeticion1.getSession(true);
-                session.setAttribute("varCodigoSesion", varCodigo);
-                session.setAttribute("varNombresSesion", varNombres);
-                session.setAttribute("varApellidosSesion", varApellidos);
-                objetoRespuesta1.sendRedirect("menuPrincipal.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        try {
+            String varCodigo = request.getParameter("txtCodigo");
+            String varUsuario = request.getParameter("txtUsuario");
+            String varPassword = request.getParameter("txtPassword");
+            String varNombres = request.getParameter("txtNombres");
+            String varApellidos = request.getParameter("txtApellidos");
+            if (!varCodigo.equalsIgnoreCase("") && !varUsuario.equalsIgnoreCase("") && !varPassword.equalsIgnoreCase("")
+                    && !varNombres.equalsIgnoreCase("") && !varApellidos.equalsIgnoreCase("")) {
+                mantenimientoUsuarioClase busuario = new mantenimientoUsuarioClase(varCodigo, varUsuario, varPassword, varNombres, varApellidos);
+                boolean sw = mantenimientoUsuarioMetodos.agregarUsuario(busuario);
+                if (sw) {
+                    request.getRequestDispatcher("mantenimientoUsuario.jsp").forward(request, response);
+                } else {
+                    // Print Writerout=response.getWriter(); 
+                    out.println("Error.");
+                }
             }
-        }finally{
+        } finally {
             out.close();
         }
     }

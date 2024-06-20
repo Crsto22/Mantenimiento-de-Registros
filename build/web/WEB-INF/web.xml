@@ -4,8 +4,24 @@
         <servlet-name>sesionVerificaServlet</servlet-name>
         <servlet-class>logicaNegocio.sesionVerificaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>mantenimientoUsuarioServlet</servlet-name>
+        <servlet-class>logicaNegocio.mantenimientoUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mantenimientoUsuarioServletBuscar</servlet-name>
+        <servlet-class>logicaNegocio.mantenimientoUsuarioServletBuscar</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>nombreXMLesesionVerificaServlet</servlet-name>
-        <url-pattern>/urlXMLsesionVerificaServlet</url-pattern>
+        <servlet-name>sesionVerificaServlet</servlet-name>
+        <url-pattern>/sesionVerificaServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mantenimientoUsuarioServlet</servlet-name>
+        <url-pattern>/mantenimientoUsuarioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mantenimientoUsuarioServletBuscar</servlet-name>
+        <url-pattern>/mantenimientoUsuarioServletBuscar</url-pattern>
     </servlet-mapping>
 </web-app>

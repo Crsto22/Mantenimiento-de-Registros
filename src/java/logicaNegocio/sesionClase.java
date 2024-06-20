@@ -14,9 +14,9 @@ public class sesionClase {
             if (miObjetoConexionCN == null) {
                 varMensaje = "No existe conexion";
             } else {
-                Statement declararObjetoBdST = miObjetoConexionCN.createStatement();
-                declararObjetoBdST.execute(parametroSql);
-                declararObjetoBdST.close();
+                Statement declararObjetoBdsT = miObjetoConexionCN.createStatement();
+                declararObjetoBdsT.execute(parametroSql);
+                declararObjetoBdsT.close();
                 miObjetoConexionCN.close();
             }
         } catch (SQLException e) {
@@ -35,24 +35,24 @@ public class sesionClase {
             if (miObjetoConexionCN == null) {
                 registrosVector = null;
             } else {
-                Statement declararObjetoBdST = miObjetoConexionCN.createStatement();
-                ResultSet datosObtenidosRs = declararObjetoBdST.executeQuery(parametroSql);
-                ResultSetMetaData identificaDatosObtenidos = datosObtenidosRs.getMetaData();
+                Statement declararObjetoBdsT = miObjetoConexionCN.createStatement();
+                ResultSet datosObtenicosRs = declararObjetoBdsT.executeQuery(parametroSql);
+                ResultSetMetaData identificaDatosObtenidos = datosObtenicosRs.getMetaData();
                 int numeroColumnas = identificaDatosObtenidos.getColumnCount();
                 String[] tituloColumnas = new String[numeroColumnas];
                 for (int i = 0; i < numeroColumnas; i++) {
                     tituloColumnas[i] = identificaDatosObtenidos.getColumnName(i + 1);
-                    registrosVector.add(tituloColumnas);
                 }
-                while (datosObtenidosRs.next()) {
+                registrosVector.add(tituloColumnas);
+                while (datosObtenicosRs.next()) {
                     String[] registroIdentificado = new String[numeroColumnas];
                     for (int i = 0; i < numeroColumnas; i++) {
-                        registroIdentificado[i] = datosObtenidosRs.getString(i + 1);
+                        registroIdentificado[i] = datosObtenicosRs.getString(i + 1);
                     }
                     registrosVector.add(registroIdentificado);
                 }
-                datosObtenidosRs.close();
-                declararObjetoBdST.close();
+                datosObtenicosRs.close();
+                declararObjetoBdsT.close();
                 miObjetoConexionCN.close();
             }
         } catch (SQLException e) {
@@ -67,9 +67,8 @@ public class sesionClase {
         Vector registrosVectorConsultados = consulta(parametroSql);
         String[] fila = null;
         if (registrosVectorConsultados != null) {
-            if (registrosVectorConsultados.size() > 1) //Si existen filas
-            {
-                fila = (String[]) registrosVectorConsultados.get(1); //En 0 estan los tit
+            if (registrosVectorConsultados.size() > 1) {
+                fila = (String[]) registrosVectorConsultados.get(1);
             }
         }
         return fila;
@@ -78,11 +77,9 @@ public class sesionClase {
     static public String getCampo(String parametroSql) {
         String[] fila = getFila(parametroSql);
         String campo = null;
-        if (fila != null) //No hay campo
-        {
+        if (fila != null) {
             campo = fila[0];
         }
         return campo;
     }
-
 }
