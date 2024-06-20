@@ -1,0 +1,12 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<div>
+    <div class="encabezado ">
+        Sistema de Registros de equipos de proteccion personal (EPP)
+    
+    <div class="miSubEncabezado a1">
+        <a href="menuPrincipal.jsp"><b><em>Inicio</em></b></a>
+    </div>
+ </div>
+    <div class="contenido">
+    </div>

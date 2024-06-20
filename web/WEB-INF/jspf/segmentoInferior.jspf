@@ -1,0 +1,8 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+<footer class="bg-blue-600 text-white px-6 py-4 rounded-lg shadow-lg text-center text-xl font-semibold">
+        <div class="container mx-auto">
+            &copy; CRISTHOFER
+        </div>
+    </footer>
+</div>
