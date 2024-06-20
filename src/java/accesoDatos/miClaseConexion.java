@@ -7,9 +7,9 @@ import java.sql.SQLException;
 
 public class miClaseConexion {
     private String driver="com.mysql.jdbc.Driver";
-    private String url="jdbc:mysql://localhost/mibase1";
+    private String url="jdbc:mysql://localhost:3308/mibase1";
     private String login="root";
-    private String password="";
+    private String password="root";
     public Connection getConnection(){
         Connection miConexionCN=null;
         try{

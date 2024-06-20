@@ -24,7 +24,7 @@
                 Mantenimiento de datos del Usuario
                 <a href="mantenimientoUsuarioNuevo.jsp" class="btn btn-small btn-success ">Nuevo</a>
             </form><br>
-            <form method="post" action="mantenimientoUsuarioServletBuscar" class="form-signin">
+            <form  action="mantenimientoUsuarioServletBuscar" class="form-signin">
                 Ingrese datos del usuario a buscar:
                 <input type="text" name="txtUsuarioB" class="input-small" placeholder="Usuario" required autofocus/><p>
                     <input type="submit" class="btn btn-small btn-success" value="Consultar"/>
