@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/mantenimientoUsuario.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/sesionCerrar.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/src/java/logicaNegocio/sesionClase.java</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/WEB-INF/jspf/segmentoEstilos.jspf</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/WEB-INF/jspf/segmentoSuperior2.jspf</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/mantenimientoUsuarioBuscar.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/src/java/logicaNegocio/mantenimientoUsuarioServletBuscar.java</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/verificarSesion.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/WEB-INF/jspf/segmentoInferior.jspf</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/src/java/accesoDatos/miClaseConexion.java</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/src/java/logicaNegocio/sesionVerificaServlet.java</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/mantenimientoUsuarioNuevo.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/menuPrincipal.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/WEB-INF/jspf/segmentoSuperior.jspf</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/src/java/logicaNegocio/mantenimientoUsuarioServlet.java</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/web/index.jsp</file>
+            <file>file:/C:/Users/cristofer/Documents/NetBeansProjects/Aplicacion/src/java/logicaNegocio/mantenimientoUsuarioMetodos.java</file>
+        </group>
+    </open-files>
+</project-private>

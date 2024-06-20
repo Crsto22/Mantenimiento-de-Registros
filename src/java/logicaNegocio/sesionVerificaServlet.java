@@ -19,11 +19,7 @@ public class sesionVerificaServlet extends HttpServlet {
             String varPassword = objetoPeticion1.getParameter("txtPassword");
             String[] datos = sesionClase.getFila("select * from mibase1.tbusuario2 where usuario='"+varUsuario+"' and password='"+varPassword+"'");
             if (datos == null) {
-                out.println("<html>");
-                out.println("Error, el usuario");
-                out.println("<b>"+varUsuario+"</b>");
-                out.println(", no cumple con los datos solicitados, Para reingresar de clic <a href='index.jsp'>Aqui</a>");
-                out.println("</html>");
+               objetoRespuesta1.sendRedirect("index.jsp?error=true");
             }else{
                 String varCodigo = datos[0];
                 String varNombres = datos[3];

@@ -8,22 +8,20 @@
         <title>Bienvenidos</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
-        <P ALIGN="right">Bienvenido, <%=varNombresMostrar%>
-        <a href="sesionCerrar.jsp" >Cerrar Session</a></P>
-        
-        <center><h4>MENU PRINCIPAL</h4></center>
-        MENTENIMIENTO DE DATOS<p>
-            <a href="mantenimientoUsuario.jsp">Usuario</a><p>
-            <a href="" >Area</a><p>
-            <a href="" >Puesto</a><p>
-            <a href="" >Epp</a><p>
-            <a href="" >Asignacion Epp por Puesto</a><p><BR>
-            REGISTRO DE ENTREGA<p>
-            <a href="" >RegistroEntregaEpp</a><p><BR>
-            REPORTES<p>
-            <a href="" >Usuario</a><p>
-            <a href="" >Area</a>
-<%@include file="WEB-INF/jspf/segmentoInferior.jspf" %>
+
+        <div class="flex h-screen bg-gray-100">
+            <%@include file="WEB-INF/jspf/segmentoSidebar.jspf" %>
+
+            <div class="flex flex-col flex-1 overflow-y-auto">
+
+                <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
+
+                <div class="p-4">
+                    <h1 class="text-2xl font-bold texxt-white">Menu Principal</h1>
+
+                </div>
+            </div>
+
+        </div>
     </body>
 </html>

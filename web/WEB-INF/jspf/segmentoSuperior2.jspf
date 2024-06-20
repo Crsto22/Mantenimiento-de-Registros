@@ -1,12 +1,23 @@
-<%-- any content can be specified here e.g.: --%>
+
 <%@ page pageEncoding="UTF-8" %>
-<div>
-    <div class="encabezado ">
-        Sistema de Registros de equipos de proteccion personal (EPP)
-    
-    <div class="miSubEncabezado a1">
-        <a href="menuPrincipal.jsp"><b><em>Inicio</em></b></a>
-    </div>
- </div>
-    <div class="contenido">
-    </div>
+
+<div class="navbar bg-base-100">
+                    <div class="flex-1">
+                        <a class=" text-xl">Sistema de Registros de equipos de proteccion personal (EPP)</a>
+                    </div>
+                    <div class="flex-none">
+                        <div class="dropdown dropdown-end">
+                            Bienvenido <%=varNombresMostrar%>
+                        </div>
+                        <div class="dropdown dropdown-end">
+                            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                                <div class="w-10 rounded-full">
+                                    <img alt="Tailwind CSS Navbar component" src="https://cdn-icons-png.flaticon.com/256/3899/3899618.png" />
+                                </div>
+                            </div>
+                            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li><a href="sesionCerrar.jsp">Cerrar Sesion</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>

@@ -8,22 +8,52 @@
         <title>Mantenimiento de datos del usuario</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
-        <P ALIGN="right">Bienvenido, <%=varNombresMostrar%>
-            <a href="sesionCerrar.jsp" >Cerrar Session</a></P>
-        <div class="ubicacion">
-            <form method="post" action="mantenimientoUsuarioServlet" class="form-signin">
-                Ingrese datos del nuevo Usuario
-                <input type="text" name="txtCodigo" class="input-small" placeholder="Codigo" required autofocus/><p>
-                <input type="text" name="txtUsuario" class="input-small" placeholder="Usuario" required/><p>
-                <input type="text" name="txtPassword" class="input-small" placeholder="Password" required/><p>
-                <input type="text" name="txtNombres" class="input-small" placeholder="Nombres" required/><p>
-                <input type="text" name="txtApellidos" class="input-small" placeholder="Apellidos" required/><p>
-                <input type="submit" class="btn btn-small btn-success " value="Guardar" /><p>                    
-                    <a href="mantenimientoUsuario.jsp" class="btn btn-small btn-danger ">Cancelar</a>  
-            </form>
+
+        <div class="flex h-screen bg-gray-100">
+            <%@include file="WEB-INF/jspf/segmentoSidebar.jspf" %>
+
+            <div class="flex flex-col flex-1 overflow-y-auto">
+
+                <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
+                <div class="p-4">
+                    <div class="ubicacion max-w-md mx-auto mt-10">
+                        <form method="post" action="mantenimientoUsuarioServlet" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                            <h2 class="text-xl font-bold mb-4">Ingrese datos del nuevo Usuario</h2>
+
+                            <div class="mb-4">
+                                <label for="txtCodigo" class="block text-gray-700 text-sm font-bold mb-2">Código:</label>
+                                <input type="text" id="txtCodigo" name="txtCodigo" class="input-small appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Código" required autofocus>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="txtUsuario" class="block text-gray-700 text-sm font-bold mb-2">Usuario:</label>
+                                <input type="text" id="txtUsuario" name="txtUsuario" class="input-small appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Usuario" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="txtPassword" class="block text-gray-700 text-sm font-bold mb-2">Password:</label>
+                                <input type="password" id="txtPassword" name="txtPassword" class="input-small appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Password" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="txtNombres" class="block text-gray-700 text-sm font-bold mb-2">Nombres:</label>
+                                <input type="text" id="txtNombres" name="txtNombres" class="input-small appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Nombres" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="txtApellidos" class="block text-gray-700 text-sm font-bold mb-2">Apellidos:</label>
+                                <input type="text" id="txtApellidos" name="txtApellidos" class="input-small appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Apellidos" required>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <input type="submit" class="btn btn-success btn-sm text-white" value="Guardar">
+                                <a href="mantenimientoUsuario.jsp" class="btn btn-error btn-sm text-white">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
         </div>
-        <%@include file="WEB-INF/jspf/segmentoInferior.jspf"%>
     </body>
 </html>

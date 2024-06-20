@@ -9,50 +9,55 @@
         <title>Busqueda de datos del usuario</title>
     </head>
     <body>
-        <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
-        <P ALIGN="right">Bienvenido, <%=varNombresMostrar%>
-            <a href="sesionCerrar.jsp" >Cerrar Session</a></P>
-        <div class="ubicacion">
-            <%mantenimientoUsuarioClase busuario = (mantenimientoUsuarioClase)request.getAttribute("busuario");%>
-            <div align="center"> 
-                <table>
-                    <tr>
-                        <td> Codigo: </td>
-                        <td>
-                            <input type="text" size="20" name="nombre" value="<%= busuario.getVarCodigo() %>"> 
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td>Usuario: </td>
-                        <td>
-                            <input type="text" size="20" name="apellido" value="<%=busuario.getVarUsuario() %>">
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td>Password: </td>
-                        <td>
-                            <input type="text" size="20" name="edad" value="<%=busuario.getVarPassword() %>"> 
-                        </td>
-                    </tr> 
-                    <tr>
-                        <td>Nombres: </td>
-                        <td>
-                            <input type="text" size="20" name="correo" value="<%=busuario.getVarNombres() %>"> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Apellidos: </td>
-                        <td>
-                            <input type="text" size="20" name="usuario" value="<%=busuario.getVarApellidos() %>">
-                        </td>
-                    </tr> 
-                </table> 
+        <div class="flex h-screen bg-gray-100">
+            <%@include file="WEB-INF/jspf/segmentoSidebar.jspf" %>
+
+            <div class="flex flex-col flex-1 overflow-y-auto">
+
+                <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
+
+                <div class="p-4">
+                    <div class="ubicacion max-w-md mx-auto mt-10">
+                        <% mantenimientoUsuarioClase busuario = (mantenimientoUsuarioClase) request.getAttribute("busuario");%>
+                        <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                            <h2 class="text-xl font-bold mb-4 text-center">Detalles del Usuario</h2>
+                            <div class="mx-auto">
+                                <table class="table-auto mx-auto">
+                                    <tbody>
+                                        <tr>
+                                            <td class="px-4 py-2">Código:</td>
+                                            <td class="px-4 py-2"><input type="text" size="20" name="codigo" value="<%= busuario.getVarCodigo()%>" class="input-small"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2">Usuario:</td>
+                                            <td class="px-4 py-2"><input type="text" size="20" name="usuario" value="<%= busuario.getVarUsuario()%>" class="input-small"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2">Password:</td>
+                                            <td class="px-4 py-2"><input type="password" size="20" name="password" value="<%= busuario.getVarPassword()%>" class="input-small"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2">Nombres:</td>
+                                            <td class="px-4 py-2"><input type="text" size="20" name="nombres" value="<%= busuario.getVarNombres()%>" class="input-small"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="px-4 py-2">Apellidos:</td>
+                                            <td class="px-4 py-2"><input type="text" size="20" name="apellidos" value="<%= busuario.getVarApellidos()%>" class="input-small"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="flex items-center justify-center mt-4">
+                                <a href="mantenimientoUsuario.jsp" class="btn btn-error btn-sm">Regresar</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
-            <br>
-            <center> 
-                <a href="mantenimientoUsuario.jsp" class="btn btn-small btn-danger">Regresar</a>
-            </center>
+
         </div>
-        <%@include file="WEB-INF/jspf/segmentoInferior.jspf"%> 
+
     </body> 
 </html>

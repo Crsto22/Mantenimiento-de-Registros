@@ -17,7 +17,7 @@ public class mantenimientoUsuarioServletBuscar extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String usuario = "usuario1";
+            String usuario = request.getParameter("txtUsuarioB");
             mantenimientoUsuarioClase busuario = mantenimientoUsuarioMetodos.consultarUsuario(usuario);
             if (busuario != null) {
                 request.setAttribute("busuario", busuario);
