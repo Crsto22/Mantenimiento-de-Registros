@@ -23,13 +23,13 @@ public class mantenimientoUsuarioServletBuscar extends HttpServlet {
                 request.setAttribute("busuario", busuario);
                 request.getRequestDispatcher("mantenimientoUsuarioBuscar.jsp").forward(request, response);
             } else {
-                out.println("Error, no se encontro el usuario");
-
+                response.sendRedirect("mantenimientoUsuario.jsp?error=true");
             }
         } finally {
             out.close();
         }
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

@@ -28,7 +28,7 @@ public class mantenimientoUsuarioServlet extends HttpServlet {
                 mantenimientoUsuarioClase busuario = new mantenimientoUsuarioClase(varCodigo, varUsuario, varPassword, varNombres, varApellidos);
                 boolean sw = mantenimientoUsuarioMetodos.agregarUsuario(busuario);
                 if (sw) {
-                    request.getRequestDispatcher("mantenimientoUsuario.jsp").forward(request, response);
+                    request.getRequestDispatcher("mantenimientoUsuario.jsp?success=true").forward(request, response);
                 } else {
                     // Print Writerout=response.getWriter(); 
                     out.println("Error.");

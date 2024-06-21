@@ -1,17 +1,21 @@
-<%@page import="logicaNegocio.mantenimientoUsuarioClase"%>
+<%-- 
+    Document   : mantenimientoUsuario
+    Created on : 11 jun. 2022, 12:44:48
+    Author     : Jeanpierre-Fernandez
+--%>
 <%@page contentType="text/html" session="true" pageEncoding="UTF-8"%>
 <%@include file="verificarSesion.jsp" %>
+<%@page import="logicaNegocio.mantenimientoUsuarioClase"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <%@include file="WEB-INF/jspf/segmentoEstilos.jspf"%> %>
+        <%@include file="WEB-INF/jspf/segmentoEstilos.jspf"%> 
         <title>Busqueda de datos del usuario</title>
     </head>
     <body>
         <div class="flex h-screen bg-gray-100">
-            <%@include file="WEB-INF/jspf/segmentoSidebar.jspf" %>
-
+            
             <div class="flex flex-col flex-1 overflow-y-auto">
 
                 <%@include file="WEB-INF/jspf/segmentoSuperior2.jspf" %>
@@ -48,7 +52,7 @@
                                 </table>
                             </div>
                             <div class="flex items-center justify-center mt-4">
-                                <a href="mantenimientoUsuario.jsp" class="btn btn-error btn-sm">Regresar</a>
+                                <a href="mantenimientoUsuario.jsp" class="btn btn-error btn-sm text-white">Regresar</a>
                             </div>
                         </div>
                     </div>
